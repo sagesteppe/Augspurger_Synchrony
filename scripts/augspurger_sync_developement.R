@@ -2,14 +2,8 @@ library(here)
 library(tidyverse)
 library(lubridate)
 
-
+#set_here(path='.')
 dummy_dat <- read_csv(paste0(here(), "/data/dummy_data.csv"))
-
-
-syn_prep<-filtered_clean %>% 
-  group_by(individual, year, species, nest_duration, nest_start, nest_end, repro_output) %>% 
-  distinct(individual) %>% 
-  ungroup() 
 
 augs_synchrony <- function(dataset, frst_day, lst_day, year_samp, grp_var1){
   
