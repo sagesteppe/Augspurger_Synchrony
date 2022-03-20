@@ -44,9 +44,9 @@ augs_synchrony <- function(dataset, frst_day, lst_day, year_samp, grp_var1){
     # term 3: all days individual i is flowering with other individuals
     # \sum_{j = i}^{n} e_{j != i}
     mutate(at3 = map_dbl(interval_obs, # @ shs on SO
-                         \(x) x %>%  
-                           intersect(interval_obs) %>%  
-                           int_length() %>% 
+                         \(x) x |> 
+                           intersect(interval_obs) |>  
+                           int_length() |> 
                            sum(na.rm = T) - int_length(x)
     ) / 86400) %>% 
     
