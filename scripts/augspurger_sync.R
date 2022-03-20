@@ -112,22 +112,25 @@ abet <- dummy_dat %>%
 abet1 <- abet %>% 
   mutate(at3 = map(interval_obs, ~ sum(lubridate::intersect(as.numeric(.x), interval_obs) %>% 
                                                    as.numeric(replace_na(0)/86400)))) %>%
-  mutate(at3 = as.numeric(at3)/86400) 
+  mutate(at3 = as.numeric(at3)/86400) %>% 
+  mutate(interval_obs2 = interval_obs)
 
-
-targets <- abet %>% select(interval_obs)
-contrasts <- abet %>% select(interval_obs)
-third_term$interval_obs <- as.numeric(third_term$interval_obs)
-
-mutate(to_subtract = intersect())
 
 abet2 <- abet1 %>% 
-  mutate(interval_obs2 = interval_obs) %>% 
   rowwise() %>% 
   mutate(to_subtract = as.numeric(intersect(interval_obs, interval_obs2))) %>% 
   ungroup() %>% 
-  map2(.x = interval_obs, .y = interval_obs2, 
-       .f = ~{results = sum(as.numeric(intersect(.x$interval_obs, .y$interval_obs2)))})
+  #mutate(tester = as.numeric(intersect(interval_obs, abet1 %>% pull(interval_obs))))
+  
+  mutate(Total = map_dbl(.x = .$interval_obs, # this code at least runs
+              .f = ~{results = sum(as.numeric(intersect(.x, abet1$interval_obs2)))}))
+
+
+
+
+
+
+
 
 
 AS_overlap <- function(x){
