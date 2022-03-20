@@ -32,6 +32,8 @@ $$
 Z= \frac{1}{n}\sum_{j = 1}^{n}X_{i}
 $$
 
+$\frac{1}{n}$
+
 where $X_{i}$ is synchrony of individual *i* with its conspecifics from part A (above)
 
 ## References:
