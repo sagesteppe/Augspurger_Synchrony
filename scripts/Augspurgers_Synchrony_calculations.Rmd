@@ -13,7 +13,7 @@ This all from Augspurger 1983.
   $X_{i}$, the index of synchrony for individual i, is defined
   
 $$
-X_{i} = (\frac{1}{n-1})(\frac{1}{f_{i}})\sum_{j = 1}^{n} e_{j != i}
+X_{i} = (\frac{1}{n-1})(\frac{1}{f_{i}})\sum_{j = i}^{n} e_{j != i}
 $$
 
 where, 
