@@ -3,7 +3,6 @@ library(tidyverse)
 library(lubridate)
 
 
-filtered_clean <- read_csv(paste0(here(), "/data/filtered_clean.csv"))
 dummy_dat <- read_csv(paste0(here(), "/data/dummy_data.csv"))
 
 
@@ -81,10 +80,10 @@ augs_synchrony <- function(dataset, frst_day, lst_day, year_samp, grp_var1){
   
 }
 
-testing <- augs_synchrony(dataset = syn_prep, 
-                    frst_day = nest_start, 
-                    lst_day = nest_end,
-                    year_samp = year,
-                    grp_var1 = species
-                    )
 
+test_dummy <- augs_synchrony(dataset = dummy_dat,
+                             frst_day = flower_start, 
+                             lst_day = flower_end,
+                             year_samp = year,
+                             grp_var1 = species
+                             )
