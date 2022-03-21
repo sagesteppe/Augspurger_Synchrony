@@ -27,7 +27,7 @@ augs_synchrony <- function(dataset, frst_day, lst_day, year_samp, grp_var1){
     # term one population (\frac{1}{n-1})
     mutate(at1 = 1/(n() -1)) %>% 
     mutate(across(c(!!frst_day, !!lst_day),
-                  function(x) as_date(x, origin = paste0(year-1, "-12-31")))
+                  function(x) as_date(x, origin = paste0(year_samp-1, "-12-31")))
     ) %>% 
     mutate(interval_obs = interval(ymd(!!frst_day), ymd(!!lst_day))) %>%
     
