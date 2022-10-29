@@ -1,5 +1,5 @@
 # Augspurger Synchrony
-A single function to calculate Augspurgers index of synchrony after Primack 1980. This function very warmly, and humbly, acknowledges Carol Augspurger, or 'Dr. A' as many alumni of UIUC have the privilege to know her. One of the few ecologists, to be both a great Natural Historian, accomplished academic, excellent instructor, and unparalled mentor.
+A single function to calculate Augspurgers index of synchrony after Primack 1980. This function very warmly, and humbly, acknowledges Carol Augspurger, or 'Dr. A' as many alumni of UIUC have the privilege to know her. One of the few ecologists, to be a great natural historian, accomplished academic, excellent instructor, devout environmentalist, and unparalled mentor.
 
 
 This all from Augspurger 1983.
