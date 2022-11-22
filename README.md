@@ -15,12 +15,12 @@ This from Augspurger 1983.
 >
 > where, 
 >
->  $e_{j}$ = number of days both individuals *i* and *j* are flowering synchronously,  *j* != *i*  
+>  $e_{j}$ = number of days both individuals **i** and *j* are flowering synchronously,  *j* != *i*  
 >  $f_{i}$ = number of days individual *i* is flowering  
 >  $n$ = number of individuals in population  
 > 
-> When X = 1.0, perfect synchrony occurs, i.e., all flowering days of individual i overlap with all flowering days of each other individual, j # i, in the > population.  
-> When X = 0.0, no synchrony occurs, i.e., no overlap occurs among any of the flowering days of individual i and any other individual, j =# i, in the > population.  
+> When X = 1.0, perfect synchrony occurs, i.e., all flowering days of individual *i* overlap with all flowering days of each other individual, *j # i*, in the > population.  
+> When X = 0.0, no synchrony occurs, i.e., no overlap occurs among any of the flowering days of individual *i* and any other individual, *j =# i*, in the > population.  
 >
 > **B.** Synchrony of the population:
 >  $Z$, the index of population synchrony, is defined as:
