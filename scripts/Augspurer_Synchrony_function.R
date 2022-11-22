@@ -14,14 +14,13 @@ augs_synchrony <- function(dataset, frst_day, lst_day, year_samp, ...){
   frst_day <- rlang::enquo(frst_day)
   lst_day <- rlang::enquo(lst_day)
   year_samp <- rlang::enquo(year_samp)
+  grp_vars <- enquos(!!year_samp, ...)
   
   dataset <- dataset %>% 
     dplyr::mutate(across(c(!!frst_day, !!lst_day), function(x) as.integer(x)))  
   
   results <- dataset %>% 
-    dplyr::group_by(!!year_samp, !!!rlang::ensyms(...), 
-             #!!grp_var2
-    ) %>% # the year of analysis, and the population variables if on multiyear data.
+    dplyr::group_by( !!!(grp_vars)) %>%
     
     # TERM A FOR THE INDIVIDUAL $X_{i}$
     
@@ -54,8 +53,8 @@ augs_synchrony <- function(dataset, frst_day, lst_day, year_samp, ...){
     
     # the index of synchrony for individual i
     dplyr::rowwise() %>% 
-    mutate(augs.indx.indiv. = at1 * at2 * at3) %>%
-    dplyr::group_by(!!year_samp, !!!rlang::ensyms(...)) %>%
+    dplyr::mutate(augs.indx.indiv. = at1 * at2 * at3) %>%
+    dplyr::group_by(!!!(grp_vars)) %>%
     
     ## TERM B FOR THE POPULATION
     dplyr::mutate(bt1 = 1/n()) %>% # $\frac{1}{n}$ 1/sample size
