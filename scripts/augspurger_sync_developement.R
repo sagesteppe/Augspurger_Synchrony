@@ -21,19 +21,28 @@ test_dummyp <- test_dummy |>
 library(ggplot2)
 
 ggplot(test_dummyp, aes(y = ID, x = median_flowers)) +
-  geom_point() +
+  geom_point(aes(fill = 'Median')) +
   facet_wrap('species', scales = 'free', nrow = 1) +
   theme_bw() +
-  geom_segment(aes(x = flower_start_DOY, y = ID, xend = flower_end_DOY, yend = ID), lty = 3) +
-  geom_segment(aes(x = lower_sd, y = ID, xend = upper_sd, yend = ID),
+  geom_segment(aes(x = flower_start_DOY, y = ID, xend = flower_end_DOY, yend = ID,
+                   linetype = 'Range')) +
+  geom_segment(aes(x = lower_sd, y = ID, xend = upper_sd, yend = ID, linetype = 'mean SD'),
                arrow = arrow(length = unit(0.03, "npc"), ends = "both")) +
+  
   theme(strip.background = element_blank(),
         axis.line = element_line(colour = "black"),
         panel.grid.major = element_blank(),
         panel.grid.minor = element_blank(),
+        axis.ticks.y = element_blank(),
+        axis.text.y = element_blank(),
         panel.border = element_blank(),
         panel.background = element_blank()) +
-  labs(title = 'Ficticious Floral Synchonry', x = 'DOY', y = 'Plant ID')
+  labs(title = 'Fictitious Floral Synchonry', x = 'Day of Year', y = 'Individual',
+       fill = NULL) +
+  scale_linetype_manual("Durations", 
+                        values=c("Range"= 3, 'mean SD' = 1)) +
+  scale_color_manual(values = c("Median" = 'black'))
+  
   
 
 ggplot(plot14a, aes(x=nest_start, xend=nest_end, y=rowid, colour=indiv_syn)) +

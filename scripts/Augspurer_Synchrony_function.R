@@ -1,6 +1,6 @@
-#' Calculcate augspurgers index of synchrony
+#' Calculate augspurgers index of synchrony
 #' 
-#' Calculcate Augspurgers Index of Synchrony from a dataframe. 
+#' Calculate Augspurgers Index of Synchrony from a dataframe. 
 #' @param dataset a data frame containing values to perform calculations on 
 #' @param year_samp = column holding information on year, required even if all events occur in
 #' the same year due to leap years. 
